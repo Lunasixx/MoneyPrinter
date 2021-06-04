@@ -1,0 +1,2 @@
+# MoneyPrinter
+django project
