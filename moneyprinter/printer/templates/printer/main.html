@@ -3,97 +3,175 @@
 
 <head>
     <style type="text/css">
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-
-        }
-
         html {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
+
         }
 
-        .row {
-            min-width: 100vw;
-            min-height: 100vh;
+        body { 
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            
+        }
+        
+        #header-row{
+            min-height: 5vh;
+          
+        }
 
+        #body-row{
+            min-height: 95vh;
+            
+        }
+        .col{
+            padding-left: 0 !important;
+            padding-right: 2px !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .row {
+            margin: 0 0 0 0 !important;
+        }
+        
+
+        .uk-margin {
+            margin-bottom: 0px !important;
         }
 
         #main-coloumn-header {
             min-height: 60vh;
-            background-color: gold;
+            background-color: grey;
 
         }
 
         #main-coloumn-body {
             min-height: 40vh;
-            background-color: green;
-
+            
         }
 
         #side-coloumn-header {
             min-height: 35vh;
-            background-color: aliceblue;
+            background-color: rgb(54, 70, 83);
+            margin: 2.5px;
+            padding: 16px 16px 0;
+            
+            
+            
         }
 
         #side-coloumn-body {
             min-height: 65vh;
-            background-color: gold;
+            background-color: grey;;
         }
 
         #side-coloumn {
             min-width: 20vw;
             max-width: 20vw;
+            
         }
 
         .container {
             min-height: 100vh;
             min-width: 100vw;
-        }
-
-        .container-fluid {
-            width: 100%;
-            margin-left: 0%;
-            margin-right: 0%;
-
-        }
-
-        .leftpane {
-            width: 25%;
-            height: 100%;
-            float: left;
-            background-color: rosybrown;
-            border-collapse: collapse;
-        }
-
-        .middlepane {
-            width: 50%;
-            height: 100%;
-            float: left;
-            background-color: royalblue;
-            border-collapse: collapse;
-        }
-
-        .rightpane {
-            width: 25%;
-            height: 100%;
-            position: relative;
-            float: right;
-            background-color: yellow;
-            border-collapse: collapse;
+            padding: 0 0 0 0 !important;
         }
 
         .toppane {
             width: 100vw;
-            height: 10vh;
-            border-collapse: collapse;
-
         }
+
+        #trade-form{
+            max-width: 60vw;
+            min-height: 40vh;
+            margin: 5px 5px 5px 5px;
+            background-color:black;
+        }
+
+        #trade-form-buy{
+            max-width: 30vw;
+            min-height: 40vh;
+            background-color:grey;
+            text-align: center;
+        }
+
+        
+        #trade-form-sell{
+            max-width: 30vw;
+            min-height: 40vh;
+            background-color:rgb(52, 42, 53);
+            text-align: center;
+        }
+
+        .title{
+            font-size: 25px;
+            font-family: sans-serif;
+            color:#fff;
+            text-align: center;
+        }
+        .trade-form-input{
+            text-align: right;
+            font-weight: 600;
+            height:40px;
+            width:50%;
+            background:rgb(192, 202, 206);
+            color:grey;
+            border:none;
+            display:block;
+            padding: 0 4px;
+            
+            position:relative; 
+            margin-left:auto; 
+            margin-right:auto; 
+            margin-top: 100px;;
+            margin-bottom:auto;
+
+            
+        }
+
+        .header-sum{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 54px;
+            margin-bottom: 8px;
+        }
+        .header-sign-sum{
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .up{
+            color: #46d7ab;
+            font-size: 20px;
+        }
+
+        .header-chart-period{
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+            margin-bottom: 8px;
+        }
+        .button-wrap{
+            -webkit-align-items: center;
+            align-items: center;
+            display: -webkit-flex;
+            display: flex;
+        }
+        
+        .btn{
+            font-size: 12px;
+            padding: 3px 8px;
+            width: auto;
+            height: auto;
+            margin-right: 8px;
+            max-height: 27px;
+        }
+        
     </style>
 
     <meta charset="utf-8">
@@ -105,77 +183,107 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css"
         media="screen" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
-
-
-
-
-
 </head>
 
 <body>
-
-    <div>
-
-        <div class="toppane" style="position: fixed;">
-            <nav class="uk-navbar-container uk-margin" uk-navbar>
-                <div class="uk-navbar-left">
-
-                    <a class="uk-navbar-item uk-logo" href="#">Logo</a>
-
-                    <ul class="uk-navbar-nav">
-                        <li>
-                            <a href="#">
-                                <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-                                Features
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="nav-overlay uk-navbar-right">
-
-                        <a class="uk-navbar-toggle" uk-search-icon
-                            uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-
-                    </div>
-
-                    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
-
-                        <div class="uk-navbar-item uk-width-expand">
-                            <form class="uk-search uk-search-navbar uk-width-1-1">
-                                <input class="uk-search-input" type="search" placeholder="Search" autofocus>
-                            </form>
-                        </div>
-
-                        <a class="uk-navbar-toggle" uk-close
-                            uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-
-                    </div>
-
-
-                </div>
-            </nav>
-        </div>
-
-
-
-    </div>
-
     <div class="container">
-        <div class="row">
-            <div class="col" id="side-coloumn" style="background-color: #4da6ff;">
-                <div id="side-coloumn-header"></div>
+        <div class="row" id="header-row">
+            <div class="col" id="navbar">
+                <div class="toppane" >
+                    <nav class="uk-navbar-container uk-margin" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+                            <ul class="uk-navbar-nav">
+                                <li>
+                                    <a href="#">
+                                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                                        Features
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="nav-overlay uk-navbar-right">
+                                <a class="uk-navbar-toggle" uk-search-icon
+                                    uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+                            </div>
+                            <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+                                <div class="uk-navbar-item uk-width-expand">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                                        <input class="uk-search-input" type="search" placeholder="Search" autofocus>
+                                    </form>
+                                </div>
+                                <a class="uk-navbar-toggle" uk-close
+                                    uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="row" id="body-row">
+            <div class="col" id="side-coloumn" style="background-color: #d6c382;">
+                <div id="side-coloumn-header">
+                    <div class="side-header-chart">
+                        <h4 class="header-title" style="color:white">Liquidity</h4>
+                        <div class="header-sum">
+                            <span class="header-sign-sum">
+                                <span class="header-sign" style="color:#7b7f84">$</span>
+                                <span class="header-number" style="color:#fff">420.69</span>
+                            </span>
+                            <sup class="up" title=0>
+                                0.00
+                                %
+                            </sup>
+                        </div>
+                        <div class="header-chart-period">
+                            <div class="button-wrap">
+                                <div class="button-group" style="display: flex;">
+                                    <button type="button" class="btn btn-outline-secondary">1 Week</button>
+                                    <button type="button" class="btn btn-outline-secondary">Whole Period</button>
+                                </div>
+                            </div>
+                            <div class="chart" style="cursor: pointer;">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="side-coloumn-body"></div>
             </div>
-            <div class="col" style="background-color: #4df6ff;">
+            <div class="col">
                 <div id="main-coloumn-header"></div>
-                <div id="main-coloumn-body"></div>
+                <div id="main-coloumn-body">
+                    <div id="trade-form">
+                        <div class="row">
+                            <div class="col" id="trade-form-buy">
+                                <label for="trade-form-buy" class="col">
+                                    <strong class="title">BUY</strong>
+                                </label>
+                                <input class="trade-form-input" type="text" placeholder="0.0">
+                            </div>
+                            <div class="col" id="trade-form-sell">
+                                <label for="trade-form-sell" class="col">
+                                    <strong class="title">SELL</strong>
+                                </label>
+                                <input class="trade-form-input" type="text" placeholder="0.0">
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col" id="side-coloumn" style="background-color: #1fa6bf;">
-                <div id="side-coloumn-header"></div>
+            <div class="col" id="side-coloumn" style="background-color: #d6c382;">
+                <div id="side-coloumn-header">
+                    <div class="side-header-chart">
+                        <h4 class="header-title" style="color:white">Trading Volume</h4>
+                    </div>
+                </div>
                 <div id="side-coloumn-body"></div>
             </div>
         </div>
     </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
