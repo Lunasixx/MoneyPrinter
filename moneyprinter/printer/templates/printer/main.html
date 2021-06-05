@@ -66,7 +66,7 @@
 
         #side-coloumn-body {
             min-height: 65vh;
-            background-color: grey;;
+            background-color: rgb(54, 70, 83);
         }
 
         #side-coloumn {
@@ -107,7 +107,7 @@
             text-align: center;
         }
 
-        .title{
+        .trade-title{
             font-size: 25px;
             font-family: sans-serif;
             color:#fff;
@@ -120,7 +120,8 @@
             width:50%;
             background:rgb(192, 202, 206);
             color:grey;
-            border:none;
+            border:2px solid #73AD21;
+            border-radius: 25px;
             display:block;
             padding: 0 4px;
             
@@ -172,6 +173,230 @@
             max-height: 27px;
         }
         
+        .left-sidebar-content{
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-gap: 16px;
+        }
+
+        .pool-header {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        .pool-title{
+            font-size: 15px;
+            line-height: 22px;
+        }
+
+        .left-sidebar-content{
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-gap: 16px;
+        }
+        
+        
+        .pool-table{
+            display: grid;
+            grid-template-rows: auto 1fr;
+            height: 100%;
+        }
+
+        .pool-table-info{
+            border-bottom: 2px solid #abb4c0;
+            justify-content: space-between;
+            display: -webkit-flex;
+            display: flex;
+            font-size: 10px;
+            padding: 0 16px 8px;
+            line-height: 15px;
+            text-decoration: none;
+            color:#6d7986
+        }
+
+        .sign-math{
+            position: relative;
+            width: 12px;
+            display: -webkit-flex;
+            display: flex;
+            margin: auto;
+        }
+        .amount-value{
+            width: 25%;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            padding-right: 2px;
+            
+        }
+
+        .amount-symbol{
+            width: 15%;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            font-family: sans-serif;
+            
+        }
+
+        .total {
+            width: 24%;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+            display: -webkit-flex;
+            display: flex;
+            min-width: 0;
+            
+        }
+
+        .emoji{
+            display: -webkit-flex;
+            display: flex;
+            width: 12%;
+            margin-top: -3px;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+            
+        }
+
+        .time {
+            
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+            min-width: 0;
+            
+        }
+
+        .pool-table [data-simplebar]{
+            max-height: none!important;
+            height: 100%;
+        }
+
+        [data-simplebar] {
+            position: relative;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+            -webkit-align-content: flex-start;
+            align-content: flex-start;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+        }
+
+        .pool-table [data-simplebar] .simplebar-wrapper {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .simplebar-wrapper{
+            overflow: hidden;
+            width: inherit;
+            height: inherit;
+            max-width: inherit;
+            max-height: inherit;
+
+        }
+
+        .simplebar-height-auto-observer-wrapper {
+            box-sizing: inherit!important;
+            height: 100%;
+            width: 100%;
+            max-width: 1px;
+            position: relative;
+            float: left;
+            max-height: 1px;
+            overflow: hidden;
+            z-index: -1;
+            padding: 0;
+            margin: 0;
+            pointer-events: none;
+            -webkit-flex-grow: inherit;
+            flex-grow: inherit;
+            -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+            -webkit-flex-basis: 0;
+            flex-basis: 0;
+        }
+
+        .simplebar-mask, .simplebar-offset {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .simplebar-mask {
+            direction: inherit;
+            overflow: hidden;
+            width: auto!important;
+            height: auto!important;
+            z-index: 0;
+        }
+
+        .simplebar-offset {
+            direction: inherit!important;
+            box-sizing: inherit!important;
+            resize: none!important;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .simplebar-mask, .simplebar-offset {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+        
+        .simplebar-content-wrapper {
+            direction: inherit;
+            box-sizing: border-box!important;
+            position: relative;
+            display: block;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .liquidity-table .simplebar-content {
+            overflow-x: hidden;
+        }
+
+        .pool-table-list{
+            color:#fff
+        }
+
+        #table-data{
+            padding: 10px 16px;
+            font-size: 12px;
+            line-height: 18px;
+            margin: 0;
+            border-radius: 15px;
+            border: 1px solid #73AD21;
+        }
+
     </style>
 
     <meta charset="utf-8">
@@ -183,6 +408,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css"
         media="screen" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 </head>
 
 <body>
@@ -219,7 +446,6 @@
                 </div>
             </div>
         </div>
-
     
         <div class="row" id="body-row">
             <div class="col" id="side-coloumn" style="background-color: #d6c382;">
@@ -235,8 +461,6 @@
                                 0.00
                                 %
                             </sup>
-                            <div
-                    
                         </div>
                         <div class="header-chart-period">
                             <div class="button-wrap">
@@ -246,12 +470,145 @@
                                 </div>
                             </div>
                             <div class="chart" style="cursor: pointer;">
-                                
+                                <!--GRAPH ZEIGS KUMT DO HER-->
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="side-coloumn-body"></div>
+                <div id="side-coloumn-body" style="flex: 1 0;">
+                    <div class="left-sidebar-content">
+                        <div class="pool-header">
+                            <h4 class="pool-title" style="color:white ">Pool Activity</h4>
+                            <div class="button-group" style="display: flex;">
+                                <button type="button" class="btn btn-outline-secondary">All</button>
+                                <button type="button" class="btn btn-outline-secondary">Adds</button>
+                                <button type="button" class="btn btn-outline-secondary">Remove</button>
+                            </div>
+                        </div>
+                        <div class="pool-table">
+                            <div class="pool-table-info">
+                                <div class="sign-math"></div>
+                                <div class="title amount-value">
+                                    <div>Token Amount</div>
+                                </div>
+                                <div class="title amount-symbol"></div>
+                                <div class="title total">
+                                    <div>Token Value, &nbsp; $</div>
+                                </div>
+                                <div class="emoji"></div>
+                                <div class="title time">
+                                    <div>Time</div>
+                                </div>
+                            </div>
+                            <div class="pool-table-list">
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col">
                 <div id="main-coloumn-header"></div>
@@ -260,14 +617,16 @@
                         <div class="row">
                             <div class="col" id="trade-form-buy">
                                 <label for="trade-form-buy" class="col">
-                                    <strong class="title">BUY</strong>
+                                    <strong class="trade-title">BUY</strong>
                                 </label>
+                                <input class="trade-form-input" type="text" placeholder="0.0">
                                 <input class="trade-form-input" type="text" placeholder="0.0">
                             </div>
                             <div class="col" id="trade-form-sell">
                                 <label for="trade-form-sell" class="col">
-                                    <strong class="title">SELL</strong>
+                                    <strong class="trade-title">SELL</strong>
                                 </label>
+                                <input class="trade-form-input" type="text" placeholder="0.0">
                                 <input class="trade-form-input" type="text" placeholder="0.0">
                             </div>
                                 
@@ -279,14 +638,166 @@
                 <div id="side-coloumn-header">
                     <div class="side-header-chart">
                         <h4 class="header-title" style="color:white">Trading Volume</h4>
+                        <div class="header-sum">
+                            <span class="header-sign-sum">
+                                <span class="header-sign" style="color:#7b7f84">$</span>
+                                <span class="header-number" style="color:#fff">420.69</span>
+                            </span>
+                            <sup class="up" title=0>
+                                0.00
+                                %
+                            </sup>
+                        </div>
+                        <div class="header-chart-period">
+                            <div class="button-wrap">
+                                <div class="button-group" style="display: flex;">
+                                    <button type="button" class="btn btn-outline-secondary">1 Week</button>
+                                    <button type="button" class="btn btn-outline-secondary">Whole Period</button>
+                                </div>
+                            </div>
+                            <div class="chart" style="cursor: pointer;">
+                                <!--GRAPH ZEIGS KUMT DO HER-->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="side-coloumn-body"></div>
+                <div id="side-coloumn-body" style="flex: 1 0;">
+                    <div class="left-sidebar-content">
+                        <div class="pool-header">
+                            <h4 class="pool-title" style="color:white ">Pool Activity</h4>
+                            <div class="button-group" style="display: flex;">
+                                <button type="button" class="btn btn-outline-secondary">All</button>
+                                <button type="button" class="btn btn-outline-secondary">Adds</button>
+                                <button type="button" class="btn btn-outline-secondary">Remove</button>
+                            </div>
+                        </div>
+                        <div class="pool-table">
+                            <div class="pool-table-info">
+                                <div class="sign-math"></div>
+                                <div class="title amount-value">
+                                    <div>Token Amount</div>
+                                </div>
+                                <div class="title amount-symbol"></div>
+                                <div class="title total">
+                                    <div>Token Value, &nbsp; $</div>
+                                </div>
+                                <div class="emoji"></div>
+                                <div class="title time">
+                                    <div>Time</div>
+                                </div>
+                            </div>
+                            <div class="pool-table-list">
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="table-data">
+                                    <div class="col" id="icon-colum">
+                                        <div icon="" style="color:green">
+                                            +
+                                        </div>
+                                    </div>
+                                    <div class="col" id="amount-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                        <div title="">
+                                            <span>0.00438</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="status-colum">
+                                        <div>
+                                            &nbsp;
+                                            <span class="name text-overflow" title="ETH">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col" id="value-colum">
+                                        <div title="">
+                                            <span>49,320</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
