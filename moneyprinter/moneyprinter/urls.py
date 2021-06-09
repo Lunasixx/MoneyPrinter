@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from printer import views as v
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', v.index, name="index"),
+    path('<str:contract>',v.index, name="indexcontract")
 ]

@@ -22,7 +22,7 @@ class GeckoInterface:
 
     #=====================PING-SECTION============================
     #check server availability
-    async def ping_gecko(self, url):
+    async def ping_gecko(self):
         return await self.request("https://api.coingecko.com/api/v3/ping")
 
 

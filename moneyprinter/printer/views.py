@@ -4,6 +4,8 @@ from printer.CoingeckoInterface import GeckoInterface
 
 # Create your views here.
 
-def index(response):
+async def index(response,contract=""):
     x = GeckoInterface("eur")
-    return render(response,"printer/main.html", {})
+    y = await x.status_updates()
+    print(y)
+    return render(response,"printer/main.html", {"y":y})
