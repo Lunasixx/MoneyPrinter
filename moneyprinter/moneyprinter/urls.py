@@ -21,5 +21,6 @@ from printer import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', v.index, name="index"),
-    path('<str:contract>',v.index, name="indexcontract")
+    path('<str:contract>',v.index, name="indexcontract"),
+    path('getprice/',v.getprice, name="getprice")
 ]

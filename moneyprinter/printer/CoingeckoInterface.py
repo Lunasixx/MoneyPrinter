@@ -1,6 +1,11 @@
-import requests
-import json
 import asyncio
+import json
+from symbol import pass_stmt
+
+import requests
+
+from .models import Coin
+
 
 class GeckoInterface:
     #value used through out api-calls //up to setting
@@ -11,6 +16,13 @@ class GeckoInterface:
 
     async def change_currency(self, currency):
         self.currency = currency
+
+    def sync_request(self,url):
+        r = requests.get(url)
+        if r.status_code==200:
+            return r.json()
+        else:
+            return "none"
 
     #makes actual request, takes whatever url and return json
     async def request(self,url):
@@ -44,6 +56,43 @@ class GeckoInterface:
     #returns all coins + id,symbol,name,platforms
     async def coins_list(self):
         return await self.request("https://api.coingecko.com/api/v3/coins/list?include_platform=true")
+
+    #returns all coins + id,symbol,name,platforms
+    async def initialize_coins_list(self):
+        x =  await self.request("https://api.coingecko.com/api/v3/coins/list?include_platform=true") 
+        for coin in x:
+            newcoin = Coin(id=coin["id"],symbol=coin["symbol"],name=coin["name"])
+            i = 0
+            for key in coin["platforms"]:
+                if i == 0:
+                    newcoin.platform1 = key
+                    newcoin.contract1 = coin["platforms"][key]
+                elif i == 1:
+                    newcoin.platform2 = key
+                    newcoin.contract2 = coin["platforms"][key]
+                elif i == 2:
+                    newcoin.platform3 = key
+                    newcoin.contract3 = coin["platforms"][key]
+                elif i == 3:
+                    break
+                i+=1
+
+            newcoin.save()
+
+
+    #search for specific contract in coins_list
+    async def search_for_contract(self, contract):
+        contract = contract.split("-")
+        if contract[1] == "bsc":
+            platform = "binance-smart-chain"
+        elif contract[1] == "eth":
+            platform = "ethereum"
+        contract = contract[0]
+        coins =  await self.coins_list()
+        for coin in coins:
+            if platform in coin["platforms"]:
+                if contract == coin["platforms"][platform]:
+                    return coin
 
     #given an array of one/multiple coin-ids -returns coin/token specific values
     async def coins_markets(self,ids=[],filter="",timespan="24h"):
@@ -123,5 +172,3 @@ class GeckoInterface:
     #returns TOP-7 trending coins searched by user on coingecko in past 24 hours
     async def search_trending(self):
         return await self.request("https://api.coingecko.com/api/v3/search/trending")
-
-
